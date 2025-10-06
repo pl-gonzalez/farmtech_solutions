@@ -10,62 +10,147 @@
  * 
  */
 
-void medir_N() {
+int medir_N() {
     int nAlto = digitalRead(N_ALTO);
     int nMedio = digitalRead(N_MEDIO);
     int nBaixo = digitalRead(N_BAIXO);
+
+    int nivel = 0;
     
     if (nAlto == 0){
         Serial.println("Nivel N Alto");
+        return nivel = 3;
     }
     
     if (nMedio == 0){
         Serial.println("Nivel N Medio");
+        return nivel = 2;
     }
     
     if (nBaixo == 0){
         Serial.println("Nivel N Baixo");
+        Serial.println(nBaixo);
+        return nivel = 1;
     }
     
-    
+    return nivel;
 }
 
-void medir_P() {
+int medir_P() {
   int pAlto = digitalRead(P_ALTO);
-  int kMedio = digitalRead(P_MEDIO);
-  int kBaixo = digitalRead(P_BAIXO);
+  int pMedio = digitalRead(P_MEDIO);
+  int pBaixo = digitalRead(P_BAIXO);
+  
+  int nivel = 0;
 
   if (pAlto == 0){
     Serial.println("Nivel P Alto");
+    return nivel = 3;
   }
 
-  if (kMedio == 0){
+  if (pMedio == 0){
     Serial.println("Nivel P Medio");
+    return nivel = 2;
   }
 
-  if (kBaixo == 0){
+  if (pBaixo == 0){
     Serial.println("Nivel P Baixo");
+    return nivel = 1;
   }
+  return nivel;
 
   
 }
 
-void medir_K() {
+int medir_K() {
     int kAlto = digitalRead(K_ALTO);
     int kMedio = digitalRead(K_MEDIO);
     int kBaixo = digitalRead(K_BAIXO);
+
+    int nivel = 0;
     
     if (kAlto == 0){
         Serial.println("Nivel K Alto");
+        return nivel = 3;
     }
     
     if (kMedio == 0){
         Serial.println("Nivel K Medio");
+        return nivel = 2;
     }
     
     if (kBaixo == 0){
         Serial.println("Nivel K Baixo");
+        return nivel = 1;
     }
+    return nivel;
     
     
+}
+
+const char* verifica_npk(){
+  char insumos[50];
+
+  switch (medir_N())
+  {
+  case 1:
+    /* Nivel Baixo */
+    strcat(insumos, " N");
+
+    break;
+
+  case 2:
+    /* Nivel Medio */
+    
+    break;
+
+  case 3:
+    /* Nivel Alto */
+    break;
+  
+  default:
+    break;
+  }
+
+  switch (medir_P())
+  {
+  case 1:
+    /* Nivel Baixo */
+    strcat(insumos, " P");
+    break;
+
+  case 2:
+    /* Nivel Medio */
+    break;
+
+  case 3:
+    /* Nivel Alto */
+    break;
+  
+  default:
+    break;
+  }
+
+  switch (medir_K())
+  {
+  case 1:
+    /* Nivel Baixo */
+    strcat(insumos, " K");
+    
+    break;
+
+  case 2:
+    /* Nivel Medio */
+    break;
+
+  case 3:
+    /* Nivel Alto */
+    break;
+  
+  default:
+    break;
+  }
+
+  return insumos;
+
 }

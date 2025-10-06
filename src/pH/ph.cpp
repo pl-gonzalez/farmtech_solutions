@@ -8,7 +8,7 @@
 
 float medir_ph_solo(){
   int sensorPh = analogRead(PH_SOLO);
-  float ph_solo = map(sensorPh, 0, 4095, 0, 14);
+  float ph_solo = map(sensorPh, 0, 4095, 0.0, 14.0);
 
   return ph_solo;
 }

@@ -13,8 +13,8 @@
 #define K_MEDIO 16
 #define K_BAIXO 4
 
-void medir_N();
-void medir_P();
-void medir_K();
+
+
+const char* verifica_npk();
 
 #endif
