@@ -37,95 +37,51 @@ void setup() {
 
 
 void loop() {
-  delay(200);
-  
-  // int nivel_N = medir_N();
-  // int nivel_P = medir_P();
-  // int nivel_K = medir_K();
 
   float temperatura = temp_umidade().temperature;
   float umidade = temp_umidade().humidity;
-  delay(1000);
 
-  Serial.println(temperatura);
-  Serial.println(umidade);
+  delay(1000);  // Para dar tempo para o simulador do esp32
 
 
-  // float ph = medir_ph_solo();
+  float ph_solo = medir_ph_solo();
 
-  if(umidade < 70.0f || temperatura > 30){
-    //   // verifica_npk(); // retorno nivel baixo de NPK
-    // aciona_bomba(strcat("Irrigação iniciada.", verifica_npk())); // Com NPK necessário
-    // Serial.println(temperatura);
-    Serial.println("Conseguiu");
+  if(ph_solo < 5.5f && umidade < 60.0f){
+    aciona_bomba("Irrigação com Cal para aumentar pH do solo");
+  }
+
+  /**
+   * Umidade < 50% -> Estresse hidrico, irrigar agora
+   * Temperatura > 35°C -> Muitoo quente para cana de açucar
+   */
+  if(umidade < 50.0f || temperatura > 35.0f){
+    int nivel_n = medir_N();
+    int nivel_p = medir_P();
+    int nivel_k = medir_K();
+
+    
+
+    if(nivel_n == 1){
+      aciona_bomba("Irrigação enriquecida com N");
+    }
+
+    else if(nivel_p == 1){
+      aciona_bomba("Irrigação enriquecida com P");
+    }
+
+    else if(nivel_k == 1){
+      aciona_bomba("Irrigação enriquecida com K");
+    }
+
+    else {
+      aciona_bomba("Irrigacao sem aditivos");
+    }
+    
+    
 
   }
 
-  // switch (nivel_N)
-  // {
-  // case 1:
-  //   /* Nivel Baixo */
-
-  //   if(temperatura > 30 && umidade < 70){
-  //     aciona_bomba("Irrigação com N, para elevar nivel de N");
-  //   }
-
-
-  //   break;
-
-  // case 2:
-  //   /* Nivel Medio */
-    
-  //   break;
-
-  // case 3:
-  //   /* Nivel Alto */
-  //   break;
   
-  // default:
-  //   break;
-  // }
 
-  // switch (nivel_P)
-  // {
-  // case 1:
-  //   /* Nivel Baixo */
-  //   if(temperatura > 30 && umidade < 70){
-  //     aciona_bomba("Irrigação com P, para elevar nivel de P");
-  //   }
-  //   break;
-
-  // case 2:
-  //   /* Nivel Medio */
-  //   break;
-
-  // case 3:
-  //   /* Nivel Alto */
-  //   break;
-  
-  // default:
-  //   break;
-  // }
-
-  // switch (nivel_K)
-  // {
-  // case 1:
-  //   /* Nivel Baixo */
-  //   if(temperatura > 30 && umidade < 70){
-  //     aciona_bomba("Irrigação com K, para elevar nivel de K");
-  //   }
-  //   break;
-
-  // case 2:
-  //   /* Nivel Medio */
-  //   break;
-
-  // case 3:
-  //   /* Nivel Alto */
-  //   break;
-  
-  // default:
-  //   break;
-  // }
 
 }

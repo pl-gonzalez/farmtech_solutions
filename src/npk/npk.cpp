@@ -88,69 +88,82 @@ int medir_K() {
     
 }
 
-const char* verifica_npk(){
-  char insumos[50];
+// int verifica_npk(){
+//   int npk[3] = {};
 
-  switch (medir_N())
-  {
-  case 1:
-    /* Nivel Baixo */
-    strcat(insumos, " N");
+//   int nivel_n = medir_N();
+//   int nivel_p = medir_P();
+//   int nivel_k = medir_K();
 
-    break;
+//   switch (medir_N())
+//   {
+//   case 1:
+//     /* Nivel Baixo */
+//     Serial.println("Baixo N");
+//     npk[0] = nivel_n;
 
-  case 2:
-    /* Nivel Medio */
+//     break;
+
+//   case 2:
+//     /* Nivel Medio */
+//     npk[0] = nivel_n;
+//     break;
+
+//   case 3:
+//     /* Nivel Alto */
+//     npk[0] = nivel_n;
+//     break;
+  
+//   default:
+//     break;
+//   }
+
+//   switch (medir_P())
+//   {
+//   case 1:
+//     /* Nivel Baixo */
+//     Serial.println("Baixo P");
+//     npk[1] = nivel_p;
+//     break;
+
+//   case 2:
+//     /* Nivel Medio */
+//     npk[1] = nivel_p;
+//     break;
+
+//   case 3:
+//     /* Nivel Alto */
+//     npk[1] = nivel_p;
+//     break;
+  
+//   default:
+//     break;
+//   }
+
+//   switch (medir_K())
+//   {
+//   case 1:
+//     /* Nivel Baixo */
+//     Serial.println("Baixo K");
+//     npk[2] = nivel_k;
     
-    break;
+//     break;
 
-  case 3:
-    /* Nivel Alto */
-    break;
-  
-  default:
-    break;
-  }
-
-  switch (medir_P())
-  {
-  case 1:
-    /* Nivel Baixo */
-    strcat(insumos, " P");
-    break;
-
-  case 2:
-    /* Nivel Medio */
-    break;
-
-  case 3:
-    /* Nivel Alto */
-    break;
-  
-  default:
-    break;
-  }
-
-  switch (medir_K())
-  {
-  case 1:
-    /* Nivel Baixo */
-    strcat(insumos, " K");
+//   case 2:
+//     /* Nivel Medio */
+//     npk[2] = nivel_k;
     
-    break;
+//     break;
 
-  case 2:
-    /* Nivel Medio */
-    break;
-
-  case 3:
-    /* Nivel Alto */
-    break;
+//   case 3:
+//     /* Nivel Alto */
+//     npk[2] = nivel_k;
+//     break;
   
-  default:
-    break;
-  }
+//   default:
+//     break;
+//   }
 
-  return insumos;
+//   return *npk;
 
-}
+// }
