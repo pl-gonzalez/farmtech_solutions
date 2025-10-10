@@ -13,6 +13,21 @@
 #define K_MEDIO 16
 #define K_BAIXO 4
 
+enum Irrigar {
+  N_OK,
+  P_OK,
+  K_OK,
+  IRRIGAR_N,
+  IRRIGAR_P,
+  IRRIGAR_K,
+  IRRIGAR_NP,
+  IRRIGAR_PK,
+  IRRIGAR_NK,
+  IRRIGAR_NPK,
+  IRRIGAR_AGUA,
+  IRRIGAR_CAL
+};
+
 int medir_N();
 int medir_P();
 int medir_K();

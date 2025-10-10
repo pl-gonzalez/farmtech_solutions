@@ -18,19 +18,18 @@ int medir_N() {
     int nivel = 0;
     
     if (nAlto == 0){
-        Serial.println("Nivel N Alto");
-        return nivel = 3;
+        Serial.print("Nivel N Alto\t");
+        return N_OK;
     }
     
     if (nMedio == 0){
-        Serial.println("Nivel N Medio");
-        return nivel = 2;
+        Serial.print("Nivel N Medio\t");
+        return N_OK;
     }
     
     if (nBaixo == 0){
-        Serial.println("Nivel N Baixo");
-        Serial.println(nBaixo);
-        return nivel = 1;
+        Serial.print("Nivel N Baixo\t");
+        return IRRIGAR_N;
     }
     
     return nivel;
@@ -44,18 +43,18 @@ int medir_P() {
   int nivel = 0;
 
   if (pAlto == 0){
-    Serial.println("Nivel P Alto");
-    return nivel = 3;
+    Serial.print("Nivel P Alto\t");
+    return P_OK;
   }
 
   if (pMedio == 0){
-    Serial.println("Nivel P Medio");
-    return nivel = 2;
+    Serial.print("Nivel P Medio\t");
+    return P_OK;
   }
 
   if (pBaixo == 0){
-    Serial.println("Nivel P Baixo");
-    return nivel = 1;
+    Serial.print("Nivel P Baixo\t");
+    return IRRIGAR_P;
   }
   return nivel;
 
@@ -71,17 +70,17 @@ int medir_K() {
     
     if (kAlto == 0){
         Serial.println("Nivel K Alto");
-        return nivel = 3;
+        return K_OK;
     }
     
     if (kMedio == 0){
         Serial.println("Nivel K Medio");
-        return nivel = 2;
+        return K_OK;
     }
     
     if (kBaixo == 0){
         Serial.println("Nivel K Baixo");
-        return nivel = 1;
+        return IRRIGAR_K;
     }
     return nivel;
     
