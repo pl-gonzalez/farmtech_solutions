@@ -54,7 +54,7 @@ while True:
     # Todo dia, as 06:30H, é realizada uma consulta a OpenMeteo API para termos previsão do tempo, chuva e temperaturas maxima e minima
     if previsao.hour == 6 and previsao.minutes == 0:
         data = consultar_open_meteo()
-        # Espera 61 minutos pra não rodar várias vezes dentro da mesma hora -> aqui estao os 30 minutos a mais
+        # Para evitar rodar varias vezes no mesmo minuto; Espera 30 minutos
         time.sleep(30 * 60)
         
         # Conectar
