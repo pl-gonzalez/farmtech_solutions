@@ -45,6 +45,7 @@ Para que o projeto fosse realizado com o simulador Wokwi, foi necessário fazer 
 * Para temperatura e umidade do solo, foi utilizado o sensor DHT22.
 
 Um video do funcionamento pode ser encontrado em: https://youtu.be/r24oL8WKGLs
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
