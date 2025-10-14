@@ -5,4 +5,6 @@
 
 float medir_ph_solo();
 
+void init_ph();
+
 #endif

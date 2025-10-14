@@ -12,3 +12,7 @@ float medir_ph_solo(){
 
   return ph_solo;
 }
+
+void init_ph(){
+  pinMode(PH_SOLO, INPUT);
+}

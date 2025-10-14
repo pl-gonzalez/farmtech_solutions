@@ -8,6 +8,8 @@ struct Dados {
     int probChuva;
 };
 
+extern Dados dados;
+
 void formata_dados(const char *input, Dados *out);
 
 #endif

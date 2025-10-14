@@ -13,25 +13,35 @@
 #define K_MEDIO 16
 #define K_BAIXO 4
 
-enum Irrigar {
+enum NivelNPK {
   N_OK,
   P_OK,
   K_OK,
-  IRRIGAR_N,
-  IRRIGAR_P,
-  IRRIGAR_K,
-  IRRIGAR_NP,
-  IRRIGAR_PK,
-  IRRIGAR_NK,
-  IRRIGAR_NPK,
-  IRRIGAR_AGUA,
-  IRRIGAR_CAL
+  BAIXO_N,
+  BAIXO_P,
+  BAIXO_K,
+  BAIXO_NP,
+  BAIXO_PK,
+  BAIXO_NK,
+  BAIXO_NPK
+};
+
+enum Irrigar {
+    IRRIGAR_AGUA,
+    IRRIGAR_N,
+    IRRIGAR_P,
+    IRRIGAR_K,
+    IRRIGAR_NPK,
+    IRRIGAR_NP,
+    IRRIGAR_NK,
+    IRRIGAR_PK
 };
 
 int medir_N();
 int medir_P();
 int medir_K();
 
-int verifica_npk();
+void init_npk();
+
 
 #endif
