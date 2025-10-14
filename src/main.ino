@@ -14,7 +14,6 @@ DHTesp dhtSensor;
 struct Dados dados;
 
 
-
 unsigned long lastUpdate = 0;
 const unsigned long interval = 5000; // 5 segundos
 
