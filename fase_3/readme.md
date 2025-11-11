@@ -26,25 +26,25 @@
 
 Nesta fase do projeto, realizamos consultas no banco de dados Oracle. Como na fase anterior eu ja havia utilizado o banco de dados para outra atividade, já possuo os dados gravados, conforme mostra imagem abaixo:
 
-<img src="./assets/print_banco_1.png" alt="Circuito do projeto" border="0" width=80% height=40%>
+<img src="./assets/print_banco_1.png" alt="Print do banco de dados" border="0" width=80% height=40%>
 
 Abaixo segue prints de consultas realizadas nos dados gravados.
 
 O primeiro print exibe a maior temperatura do solo registrada:
 
-<img src="./assets/print_banco_2.png" alt="Circuito do projeto" border="0" width=80% height=40%>
+<img src="./assets/print_banco_2.png" alt="Print do banco de dados" border="0" width=80% height=40%>
 
 O segundo, mostra a menor temperatura do solo:
 
-<img src="./assets/print_banco_3.png" alt="Circuito do projeto" border="0" width=80% height=40%>
+<img src="./assets/print_banco_3.png" alt="Print do banco de dados" border="0" width=80% height=40%>
 
 A seguir, temos a media das temperaturas do solo de todos os dados gravados:
 
-<img src="./assets/print_banco_4.png" alt="Circuito do projeto" border="0" width=80% height=40%>
+<img src="./assets/print_banco_4.png" alt="Print do banco de dados" border="0" width=80% height=40%>
 
 E por fim, uma consulta para exibir os registros onde a umidade do solo é menor que 50%, que no caso da lavoura escolhida (cana-de-açúcar) seria um cenário de escassez hídrica.
 
-<img src="./assets/print_banco_5.png" alt="Circuito do projeto" border="0" width=80% height=40%>
+<img src="./assets/print_banco_5.png" alt="Print do banco de dados" border="0" width=80% height=40%>
 
 Todos os resultados foram organizados para exibir o ultimo dado gravado.
 
@@ -57,7 +57,7 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>assets</b>: aqui estão os arquivos de imagem para a elaboração deste arquivo.
 
-- <b>scripts</b>: script para consulta de API, conexao e envio de dados via MQTT.
+- <b>scripts</b>: Codigo em Python, realiza operações no banco de dados, comunicação MQTT, consultas a API e geração de alertas com base nos dados recebidos
 
 - <b>src</b>: Código criado para funcionamento do ESP32.
   
